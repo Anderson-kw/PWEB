@@ -1,0 +1,46 @@
+body {
+    background-color: #c6c6c6;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+a{
+    color: blue;
+    text-decoration: underline;
+}
+
+a:hover{
+    color: darkblue;
+}
+
+header {
+    background-color: darkgray;
+    color: black;
+    padding: 10px 20px;
+}
+
+nav {
+    background-color: darkgray;
+    float: left;
+    width: 100%;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a{
+    color: black;
+}
+
+section{
+    border: 1px solid gray;
+    padding: 20px;
+}
+
+footer{
+    padding: 10x 20x;
+    text-align: right;
+}
