@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetoFinal - JáVi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+        <div class="home">
+            <a href="index.html" class="logo-site">
+                <h1 class="logo-site-text">Já vi</h1> </a>
+        </div>
+        <div class="pesquisa-header"> 
+            <input type="text" placeholder="Pesquisar filme" class="caixa-pesquisa" id="caixaPesquisa"> 
+        </div>
+    </header>
+
+    <div class="conteudo-flex">
+        <aside class="menu-lateral">
+            <nav class="navegacao-principal">
+                <ul>
+                    <li><a href="#">Perfil</a></li> <li><a href="lista-filmes.html">Lista de Filmes Assistidos</a></li>
+                    <li><a href="adicionar-filme.html">Adicionar Filmes Assistido</a></li>
+                    <li><a href="#">Recomendações</a></li> </ul>
+            </nav>
+        </aside>
+    
+        <main class="conteudo-principal">  
+            <section class="filmes-destaque">
+                <h2>Filmes em Destaque</h2>
+                
+                <div class="lista-filmes-horizontal" id="filmesEmDestaque">
+                    <p style="text-align: center; padding: 20px;">Carregando filmes...</p>
+                </div>
+            </section>
+        </main>
+    </div> <script src="script.js"></script>
+</body>
+</html>

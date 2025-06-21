@@ -1,0 +1,543 @@
+body {
+    background-color: #121212;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-principal {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.logo-site {
+    text-decoration: none;
+    color: white;
+}
+
+.logo-site h1 {
+    margin: 0 20px;
+    font-size: 64px;
+}
+
+.caixa-pesquisa{
+    padding: 10px 35px;
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #B0B0B0;
+    color: black;
+}
+
+.conteudo-flex {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.menu-lateral {
+    width: 200px;
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    border-radius: 8px;
+}
+
+.navegacao-principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navegacao-principal li a {
+    display: block;
+    color: #B0B0B0;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.navegacao-principal li a:hover {
+    background-color: #333;
+    color: white;
+}
+
+.conteudo-principal {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.filmes-destaque {
+    margin-top: 30px;
+}
+
+.filmes-destaque h2 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2em;
+}
+
+.lista-filmes-horizontal {
+    display: flex;
+    padding-bottom: 10px;
+    padding-bottom: 10px;
+    gap: 30px;
+}
+
+.card-filme-destaque {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    min-width: 180px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-filme-destaque img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.card-filme-destaque h4 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    flex-grow: 1;
+    overflow: hidden; 
+}
+
+.botao-sinopse {
+    border-radius: 5px;
+    margin-top: auto;
+    font-size: 15px;
+    background: none;
+    border: 1px solid #E50914; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao-sinopse:hover {
+    background-color: #E50914;
+    color: white;
+}
+
+.secao-adicionar-filme {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    position: relative;
+}
+
+.secao-adicionar-filme h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.formulario-adicionar-filme {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.campo-form {
+    width: 100%;
+    text-align: center; 
+    position: relative;
+}
+
+.campo-form label {
+    display: block;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.campo-form input[type="text"] {
+    width: calc(100% - 24px); 
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #B0B0B0;
+    color: black;
+    font-size: 1.3em;
+    box-sizing: border-box;
+    text-align: center;
+}
+.campo-form input[type="number"]{
+    width: 80px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #B0B0B0;
+    color: black;
+    font-size: 1.3em;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.filme-selecionado-info {
+    background-color: #2e2e2e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.filme-selecionado-info h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.filme-selecionado-info img {
+    margin-bottom: 15px;
+}
+
+.filme-selecionado-info p {
+    margin: 0;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.filme-selecionado-info strong {
+    color: white;
+}
+
+
+/* --- ESTILOS PARA AUTOCOMPLETAR (NOVO) --- */
+.resultados-pesquisa-autocomplete {
+    background-color: #2e2e2e; /* Fundo mais escuro para a caixa de sugestões */
+    border: 1px solid #444;
+    border-radius: 6px;
+    max-height: 200px; /* Limita a altura da lista */
+    overflow-y: auto; /* Adiciona scroll se a lista for muito longa */
+    position: absolute; /* ESSENCIAL para posicionar a lista corretamente em relação ao seu pai com position: relative */
+    z-index: 100; /* Garante que a lista fique acima de outros elementos */
+    width: calc(100% - 60px); /* Ajusta a largura para o padding do elemento pai (.secao-adicionar-filme) */
+    left: 30px; /* Alinha com o padding-left do pai */
+    margin-top: 2px; /* Pequeno espaço entre o input e a lista */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Uma leve sombra para destacar */
+    /* display: none; -> O JavaScript controlará a visibilidade */
+}
+
+.item-autocomplete {
+    padding: 10px 15px;
+    cursor: pointer; /* Indica que o item é clicável */
+    color: #f0f0f0; /* Cor do texto */
+    border-bottom: 1px solid #3a3a3a; /* Linha divisória entre os itens */
+    font-size: 1em;
+    text-align: left; /* Garante que o texto do item fique à esquerda */
+}
+
+.item-autocomplete:last-child {
+    border-bottom: none; /* Remove a borda do último item para melhor estética */
+}
+
+.item-autocomplete:hover {
+    background-color: #4a4a4a; /* Cor de fundo ao passar o mouse */
+}
+
+
+.botao-adicionar {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-adicionar:hover {
+    background-color: #FF2431; 
+}
+
+.secao-meus-filmes {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+.secao-meus-filmes h2 {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-filmes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    min-width: 600px; 
+}
+
+.tabela-filmes th, .tabela-filmes td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+    color: white;
+}
+
+.tabela-filmes th {
+    background-color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.botao-detalhes {
+    background-color: #B0B0B0;
+    color: black;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.botao-detalhes img {
+    width: 25px;
+    height: 25px;
+}
+.botao-detalhes:hover {
+    background-color: #ccc;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    align-items: center;
+    overflow: auto;
+}
+.modal-conteudo {
+    background-color: #222;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    color: white;
+}
+
+.fechar-modal {
+    color: #B0B0B0;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+    color: white;
+}
+
+.fechar-modal img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    filter: invert(70%); 
+    transition: filter 0.3s ease;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-filme-capa {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-body h3 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #E50914;
+}
+
+.modal-body p {
+    margin: 5px 0;
+    max-width: 90%;
+}
+
+.modal-body strong {
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .cabecalho-principal {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .logo-site h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .caixa-pesquisa-global {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .conteudo-flex {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+    }
+
+    .navegacao-principal ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .navegacao-principal li a {
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+
+    .conteudo-principal {
+        padding: 10px;
+    }
+
+    .secao-adicionar-filme,
+    .secao-meus-filmes {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .campo-form input[type="text"] {
+        width: calc(100% - 20px); 
+    }
+
+    .resultados-pesquisa-autocomplete {
+        width: calc(100% - 40px);
+        left: 20px;
+    }
+
+    .tabela-filmes {
+        min-width: unset; 
+    }
+
+    .tabela-filmes th, .tabela-filmes td {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .tabela-filmes td img {
+        width: 40px;
+        height: 60px;
+    }
+
+    .botao-detalhes img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .modal-conteudo {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .modal-filme-capa {
+        max-width: 150px;
+    }
+
+    .modal-body h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho-principal {
+        padding: 10px;
+    }
+    .logo-site h1 {
+        font-size: 30px;
+    }
+    .caixa-pesquisa-global {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    .navegacao-principal li a {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+    .card-filme-recente {
+        min-width: 150px;
+        padding: 10px;
+    }
+    .card-filme-recente img {
+        max-width: 120px;
+    }
+    .botao-adicionar {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
