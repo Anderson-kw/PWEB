@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores Fatec Sorocaba</title>
+    <style>
+        table#tabela1{
+            border-collapse: collapse;
+        }
+        table#tabela1 th, 
+        table#tabela1 td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        table#tabela1 tr td{
+            background: #ffc;
+        }
+        table#tabela1 tr.cabeca td{
+            background: #eee;
+            font-weight: bold;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <table ID = "tabela1">
+        <tr class = "cabeca">
+            <td>NOME</td>
+            <td>E-MAIL</td>
+        </tr>
+        <% console.log('QUANTIDADE DE REGISTROS: ' + profs.length); %>
+        <% for(let i = 0; i < profs.length; i++){%>
+        <tr>
+            <td><%= profs[i].NOME_PROFESSOR %></td>
+            <td><%= profs[i].EMAIL_PROFESSOR %></td>
+        </tr>
+        <% } %>
+    </table>
+    <br>
+    <a href="/informacao/professores/detalhaprofessor">Detalhe Professor</a>
+    <br>
+    <br>
+    <a href="/admin/adicionar_professor">Adicionar Professor</a>
+    <br>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>
